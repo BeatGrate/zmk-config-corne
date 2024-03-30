@@ -9,46 +9,55 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
+       combos {
+                compatible = "zmk,combos";
+                combo_esc {
+                    timeout-ms = <50>;
+                    key-positions = <20 21>;
+                    bindings = <&kp ESC>;
+                }
+       } 
+
         keymap {
                 compatible = "zmk,keymap";
 
                 default_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | DEL |
+// |  TAB  |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | DEL |
 // |  CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  | GR  |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | BSLH |
+// | SHFT  |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | BSLH |
 //                   | GUI | TAB | ENT |   | SPC | BSPC  | LSFT |
                         bindings = <
    &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp DEL
    &kp LCTRL  &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp GRAVE
    &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp BSLH
-         &mt LGUI LALT &lt 1 TAB &kp RET    &kp SPACE &lt 2 BSPC &kp LSHIFT
+                &kp LGUI &lt 1 TAB &kp RET    &kp SPACE &lt 2 BSPC &kp LSHIFT
                         >;
                 };
                 lower_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB |  !  |  @  |  #  |  $   |  %   |   |  ^   |  &   |  *  |  (  |  )  | DEL  |
-// |  ALT |  1  |  2  |  3  |  4   |  5   |   |  6   |  7   |  8  |  9  |  0  | GR   |
-// | SHFT |     |  ~  |  `  | LBRC | LCBR |   | RCBR | RBRC |     |     |     | BLSH |
+// |  TAB |  !  |  @  |  #  |  $   |  %   |   |  ^   |  &   |  *  |  (   |  )  | DEL  |
+// |  ALT |  1  |  2  |  3  |  4   |  5   |   |  6   |  7   |  8  |  9   |  0  | GR   |
+// | SHFT |     |  ~  |  `  | LBRC | LCBR |   | RCBR | RBRC |     |  LT  |  GT | BLSH |
 //                   | CTRL | ENT | TAB |   | BSPC | SPC | LSFT |
                         bindings = <
    &trans  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT &kp CARET &kp AMPS &kp ASTRK &kp LPAR &kp RPAR &kp BSPC
    &trans &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &trans
-   &trans  &none &kp TILDE2 &kp GRAVE &kp LBKT &kp LBRC &kp RBKT &kp RBRC &trans &trans &trans &trans
+   &trans  &none &kp TILDE2 &kp GRAVE &kp LBKT &kp LBRC &kp RBKT &kp RBRC &trans &kp LT &kp GT &trans
                 &trans     &trans   &trans      &trans  &trans   &kp COLON
                         >;
                 };
 
                 raise_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB | DEL  |     |  _  |    +   | PGUP |   | BT_CLR | BT_NXT | BT_PRV |  BSLS | PIPE |  DEL  |
-// |  ALT | HOME | END |  -  |    =   | PGDN |   | LEFT   | DOWN   | UP | RIGHT | APP  |  GR   |
-// | SHFT | LT   | GT  | COPY | PASTE | SEMI |   | PP     | MPREV  | MNEXT | VOL- | VOL+  |  BSLS |
+// |  TAB | DEL  |     |  _  |    +   | PGUP |   | BT_CLR | BT_NXT | BT_PRV |  BSLS | PIPE |  DEL |
+// | CTRL | HOME | END |  -  |    =   | PGDN |   | LEFT   | DOWN   | UP     | RIGHT | APP  |  GR  |
+// | SHFT | ALT  | DEL | COPY | PASTE | SEMI |   | PP     | MPREV  | MNEXT  | VOL-  | VOL+ |  BSLS|
 //                     | CTRL | ENT | TAB |   | BSPC | SPC | LSFT |
                         bindings = <
    &trans &kp DEL &none &kp UNDER &kp PLUS &kp PG_UP   &bt BT_CLR  &bt BT_NXT &bt BT_PRV &kp BSLH &kp PIPE &trans
    &trans &kp HOME &kp END &kp MINUS  &kp EQUAL   &kp PG_DN      &kp LEFT &kp DOWN &kp UP  &kp RIGHT &kp K_APP &trans
-   &trans &kp LT &kp GT &kp K_COPY  &kp K_PASTE   &kp SEMI      &kp K_PP &kp K_PREV  &kp K_NEXT  &kp K_VOL_DN &kp K_VOL_UP &trans
+   &trans &kp LALT &kp DEL &kp K_COPY  &kp K_PASTE   &kp SEMI      &kp K_PP &kp K_PREV  &kp K_NEXT  &kp K_VOL_DN &kp K_VOL_UP &trans
                              &mt LCTRL ESC  &trans  &none   &trans   &trans    &trans
                         >;
                 };
