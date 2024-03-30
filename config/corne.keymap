@@ -8,6 +8,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+/ {
         keymap {
                 compatible = "zmk,keymap";
 
@@ -26,9 +27,9 @@
                 };
                 lower_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | DEL  |
-// |  ALT |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | GR   |
-// | SHFT |     |  ~  |  `  |  [  |  {  |   |  ]  |  }  |     |     |     | BLSH |
+// |  TAB |  !  |  @  |  #  |  $   |  %   |   |  ^   |  &   |  *  |  (  |  )  | DEL  |
+// |  ALT |  1  |  2  |  3  |  4   |  5   |   |  6   |  7   |  8  |  9  |  0  | GR   |
+// | SHFT |     |  ~  |  `  | LBRC | LCBR |   | RCBR | RBRC |     |     |     | BLSH |
 //                   | CTRL | ENT | TAB |   | BSPC | SPC | LSFT |
                         bindings = <
    &trans  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT &kp CARET &kp AMPS &kp ASTRK &kp LPAR &kp RPAR &kp BSPC
