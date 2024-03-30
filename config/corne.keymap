@@ -41,12 +41,12 @@
 
                 raise_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB | DEL  |     |  _  |    +   | PGUP |   |      |       |    |  BSLS | PIPE |  DEL  |
-// |  ALT | HOME | END |  -  |    =   | PGDN |   | LEFT | DOWN  | UP | RIGHT | APP  |  GR   |
-// | SHFT | LT   | GT  | COPY | PASTE | SEMI |   | PP   | MPREV | MNEXT | VOL- | VOL+  |  BSLS |
+// |  TAB | DEL  |     |  _  |    +   | PGUP |   | BT_CLR | BT_NXT | BT_PRV |  BSLS | PIPE |  DEL  |
+// |  ALT | HOME | END |  -  |    =   | PGDN |   | LEFT   | DOWN   | UP | RIGHT | APP  |  GR   |
+// | SHFT | LT   | GT  | COPY | PASTE | SEMI |   | PP     | MPREV  | MNEXT | VOL- | VOL+  |  BSLS |
 //                     | CTRL | ENT | TAB |   | BSPC | SPC | LSFT |
                         bindings = <
-   &trans &kp DEL &none &kp UNDER &kp PLUS &kp PG_UP   &none  &none &none &kp BSLH &kp PIPE &trans
+   &trans &kp DEL &none &kp UNDER &kp PLUS &kp PG_UP   &bt BT_CLR  &bt BT_NXT &bt BT_PRV &kp BSLH &kp PIPE &trans
    &trans &kp HOME &kp END &kp MINUS  &kp EQUAL   &kp PG_DN      &kp LEFT &kp DOWN &kp UP  &kp RIGHT &kp K_APP &trans
    &trans &kp LT &kp GT &kp K_COPY  &kp K_PASTE   &kp SEMI      &kp K_PP &kp K_PREV  &kp K_NEXT  &kp K_VOL_DN &kp K_VOL_UP &trans
                              &mt LCTRL ESC  &trans  &none   &trans   &trans    &trans
