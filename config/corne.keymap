@@ -36,9 +36,9 @@
                 };
                 lower_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB |  !  |  @  |  #  |  $   |  %   |   |  ^   |  &   |  *  |  (   |  )  | DEL  |
-// |  ALT |  1  |  2  |  3  |  4   |  5   |   |  6   |  7   |  8  |  9   |  0  | GR   |
-// | SHFT |     |  ~  |  `  | LBRC | LCBR |   | RCBR | RBRC |     |  LT  |  GT | BLSH |
+// |  TAB |  !  |  @  |  #  |  $   |  %   |   |  ^   |  &   |  *  |  (   |  )  | DEL   |
+// |  ALT |  1  |  2  |  3  |  4   |  5   |   |  6   |  7   |  8  |  9   |  0  | SQT   |
+// | SHFT |     |  ~  |  `  | LBRC | LCBR |   | RCBR | RBRC |     |  LT  |  GT | GRAVE |
 //                   | CTRL | ENT | TAB |   | BSPC | SPC | LSFT |
                         bindings = <
    &trans  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT &kp CARET &kp AMPS &kp ASTRK &kp LPAR &kp RPAR &kp BSPC
@@ -50,13 +50,13 @@
 
                 raise_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB | DEL  |     |  _  |    +   | PGUP |   | BT_CLR | BT_NXT | BT_PRV |  BSLS | PIPE |  DEL |
-// | CTRL | HOME | END |  -  |    =   | PGDN |   | LEFT   | DOWN   | UP     | RIGHT | APP  |  GR  |
-// | SHFT | ALT  | DEL | COPY | PASTE | SEMI |   | PP     | MPREV  | MNEXT  | VOL-  | VOL+ |  BSLS|
+// |  TAB | DEL  |     |  _  |    +   | PGUP |   | BT_CLR | BT_NXT | BT_PRV |  BSLS | PIPE |  DEL   |
+// | CTRL | HOME | END |  -  |    =   | PGDN |   | LEFT   | DOWN   | UP     | RIGHT | APP  |  PIPE  |
+// | SHFT | ALT  | DEL | COPY | PASTE | SEMI |   | PP     | MPREV  | MNEXT  | VOL-  | VOL+ |  GRAVE |
 //                     | CTRL | ENT | TAB |   | BSPC | SPC | LSFT |
                         bindings = <
    &trans &kp DEL &none &kp UNDER &kp PLUS &kp PG_UP   &bt BT_CLR  &bt BT_NXT &bt BT_PRV &kp BSLH &kp PIPE &trans
-   &trans &kp HOME &kp END &kp MINUS  &kp EQUAL   &kp PG_DN      &kp LEFT &kp DOWN &kp UP  &kp RIGHT &kp K_APP &trans
+   &trans &kp HOME &kp END &kp MINUS  &kp EQUAL   &kp PG_DN      &kp LEFT &kp DOWN &kp UP  &kp RIGHT &kp K_APP &kp PIPE
    &trans &kp LALT &kp DEL &kp K_COPY  &kp K_PASTE   &kp SEMI      &kp C_PP &kp C_PREV  &kp C_NEXT  &kp C_VOL_DN &kp C_VOL_UP &trans
                              &mt LCTRL ESC  &trans  &none   &trans   &trans    &trans
                         >;
