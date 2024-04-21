@@ -17,6 +17,13 @@
                     key-positions = <19 20>;
                     bindings = <&kp ESC>;
                 };
+
+                combo_alt_dot {
+                    timeout-ms = <50>;
+                    layers = <1>;
+                    key-positions = <35>;
+                    bindings = <&kp LALT &kp DOT>;
+                };
        };
 
         keymap {
@@ -37,29 +44,29 @@
                 };
                 lower_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB |  !  |  @  |  #  |  $   |  %   |   |  ^   |  &   |  *  |  (   |  )  | TRANS |
-// |  ALT |     |     |     |      |      |   |      |      |     |      |TRANS| TRANS |
-// | SHFT |     |  ~  |  `  | LBRC | LCBR |   | RCBR | RBRC |     |  LT  |  GT |       |
-//                   | CTRL | ENT | TAB |   | BSPC | SPC | LSFT |
+// | TRANS|  !  |  @  |  #  |  $   |  %   |   |  ^   |  &   |  *  |  (   |  )  | BSPC  |
+// | TRANS| ALT | DEL |     |      |      |   | LEFT |  UP  |DOWN |RIGHT | HOME| END   |
+// | TRANS|     |     |     |      |      |   |      |  -   |  =  |  [   |   ] | TRANS |
+//                    |TRANS| TRANS|TRANS |   |TRANS | TRANS | TRANS |
                         bindings = <
    &trans  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT &kp CARET &kp AMPS &kp ASTRK &kp LPAR &kp RPAR &kp BSPC
-   &trans &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp BSLH
-   &trans  &none &kp TILDE2 &kp GRAVE &kp LBKT &kp LBRC &kp RBKT &kp RBRC &trans &trans &trans &trans
-                &trans     &trans   &trans      &trans  &trans   &kp COLON
+   &trans  &kp LALT &kp DEL &none &none &none &kp LEFT &kp UP &kp DOWN &kp RIGHT &Home &End
+   &trans  &none &none &none &none &none &none &kp MINUS &kp EQUAL &kp LBKT &kp RBKT &trans
+                &trans     &trans   &trans      &trans  &trans   &trans
                         >;
                 };
 
                 raise_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB | DEL  |     |  _  |    +   | PGUP |   | BT_CLR | BT_NXT | BT_PRV |  BSLS | PIPE |  DEL   |
-// | CTRL | HOME | END |  -  |    =   | PGDN |   | LEFT   | DOWN   | UP     | RIGHT | APP  |  PIPE  |
-// | SHFT | ALT  | DEL | COPY | PASTE | SEMI |   | PP     | MPREV  | MNEXT  | VOL-  | VOL+ |  GRAVE |
-//                     | CTRL | ENT | TAB |   | BSPC | SPC | LSFT |
+// | TRANS|   1  |  2  |  3  |    4   |   5  |   |    6   |    7   |    8   |   9   |   0  |  TRANS |
+// | TRANS|MPLAY |MPREV|MNEXT|  MVOLD |MVOLU |   | BTCLR  | BTPRV  | BTNXT  |       | TRANS|  TRANS |
+// | TRANS| ALT  | DEL | COPY | PASTE |      |   |        |   _    |    +   |   {   |   }   | TRANS |
+//                     | TRANS| TRANS | TRANS|   |  TRANS | TRANS  | TRANS  |
                         bindings = <
-   &trans &kp DEL &none &kp UNDER &kp PLUS &kp PG_UP   &bt BT_CLR  &bt BT_NXT &bt BT_PRV &kp BSLH &kp PIPE &trans
-   &trans &kp HOME &kp END &kp MINUS  &kp EQUAL   &kp PG_DN      &kp LEFT &kp DOWN &kp UP  &kp RIGHT &kp K_APP &kp PIPE
-   &trans &kp LALT &kp DEL &kp K_COPY  &kp K_PASTE   &kp SEMI      &kp C_PP &kp C_PREV  &kp C_NEXT  &kp C_VOL_DN &kp C_VOL_UP &trans
-                             &mt LCTRL ESC  &trans  &none   &trans   &trans    &trans
+   &trans &kp 1 &kp 2 &kp 3 &kp 4 &kp 5   &kp 6  &kp 7 &kp 8 &kp 9 &kp 0 &trans
+   &trans &kp C_PP &kp C_PREV &kp C_NEXT  &kp C_VOL_DN   &kp C_VOL_UP &kp BT_CLR &kp BT_PRV &kp BT_NXT  &none &trans &trans
+   &trans &kp LALT &kp DEL &kp K_COPY  &kp K_PASTE  &none   &none &kp UNDER  &kp PLUS  &kp LBRC &kp RBRC &trans
+                             &trans    &trans  &trans   &trans   &trans    &trans
                         >;
                 };
         };
