@@ -1,3 +1,4 @@
+
 /*
  * Copyright (c) 2020 The ZMK Contributors
  *
@@ -23,22 +24,22 @@
 
                 default_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB  |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | DEL |
-// |  CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  | SQT  |
+// | TAB   |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BSLH |
+// | CTRL  |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  | SQT  |
 // | SHFT  |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | GRAVE |
-//                   | GUI | TAB | ENT |   | SPC | BSPC  | LSFT |
+//                   | GUI | L1 | BSPC |   | SPC | L2 and ENT  | LSFT |
                         bindings = <
-   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
-   &kp LCTRL  &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
+   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSLH
+   &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
    &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp GRAVE
-                &kp LGUI &lt 1 LALT &kp RET    &kp SPACE &lt 2 BSPC &kp LSHIFT
+                &kp LGUI &kp 1 &kp BSPC    &kp SPACE &lt 2 ENT &kp LSHIFT
                         >;
                 };
                 lower_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB |  !  |  @  |  #  |  $   |  %   |   |  ^   |  &   |  *  |  (   |  )  | DEL   |
-// |  ALT |  1  |  2  |  3  |  4   |  5   |   |  6   |  7   |  8  |  9   |  0  | BSLH  |
-// | SHFT |     |  ~  |  `  | LBRC | LCBR |   | RCBR | RBRC |     |  LT  |  GT | GRAVE |
+// |  TAB |  !  |  @  |  #  |  $   |  %   |   |  ^   |  &   |  *  |  (   |  )  | TRANS |
+// |  ALT |     |     |     |      |      |   |      |      |     |      |TRANS| TRANS |
+// | SHFT |     |  ~  |  `  | LBRC | LCBR |   | RCBR | RBRC |     |  LT  |  GT |       |
 //                   | CTRL | ENT | TAB |   | BSPC | SPC | LSFT |
                         bindings = <
    &trans  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT &kp CARET &kp AMPS &kp ASTRK &kp LPAR &kp RPAR &kp BSPC
