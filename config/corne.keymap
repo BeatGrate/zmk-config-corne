@@ -50,7 +50,7 @@
 //                    |TRANS| TRANS|TRANS |   |TRANS | TRANS | TRANS |
                         bindings = <
    &trans  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT &kp CARET &kp AMPS &kp ASTRK &kp LPAR &kp RPAR &kp BSPC
-   &trans  &kp LALT &kp DEL &none &none &none &kp LEFT &kp UP &kp DOWN &kp RIGHT &Home &End
+   &trans  &kp LALT &kp DEL &none &none &none &kp LEFT &kp UP &kp DOWN &kp RIGHT &kp Home &kp End
    &trans  &none &none &none &none &none &none &kp MINUS &kp EQUAL &kp LBKT &kp RBKT &trans
                 &trans     &trans   &trans      &trans  &trans   &trans
                         >;
