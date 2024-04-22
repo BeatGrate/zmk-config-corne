@@ -37,12 +37,12 @@
 // |  TAB  |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BSLH |
 // |  CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  | SQT  |
 // | SHFT  |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | GRAVE |
-//   | GUI | L1 and TAB | LSHIFT and ESC |   | BSPC and CTRL | L2 and SPACE | ENTER |
+//   | GUI | L1 and ESC | LSHIFT and TAB |   | BSPC and CTRL | L2 and SPACE | ENTER |
                         bindings = <
    &kp TAB    &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSLH
    &kp LCTRL  &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
    &kp LSHFT  &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp GRAVE
-          &kp LGUI  &lt 1 TAB &mt LSHFT ESC   &mt LCTRL BSPC &lt 2 SPACE &kp RET
+          &kp LGUI  &lt 1 ESC &mt LSHFT TAB   &mt LCTRL BSPC &lt 2 SPACE &kp RET
                         >;
                 };
                 lower_layer {
