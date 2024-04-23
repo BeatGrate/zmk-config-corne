@@ -12,6 +12,10 @@
 #define LOWER 1
 #define RAISE
 
+&lt {
+    taping-term-ms = <400>;
+};
+
 
 / {
        combos {
