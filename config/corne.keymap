@@ -20,18 +20,10 @@
                     key-positions = <19 20>;
                     bindings = <&kp ESC>;
                 };
-
-                combo_alt_dot {
-                    timeout-ms = <50>;
-                    layers = <1>;
-                    key-positions = <35>;
-                    bindings = <&kp LALT &kp DOT>;
-                };
        };
 
-       &mt {
+       &lt {
            tapping-term-ms = <400>;
-
        };
 
         keymap {
