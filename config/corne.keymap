@@ -12,6 +12,10 @@
 #define LOWER 1
 #define RAISE
 
+&lt {
+    tapping-term-ms = <300>;
+};
+
      
 / {
        combos {
