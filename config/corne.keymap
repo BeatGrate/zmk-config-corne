@@ -22,7 +22,7 @@
                 };
        };
 
-       &lt {
+       &lt 2 RET {
            tapping-term-ms = <400>;
        };
 
