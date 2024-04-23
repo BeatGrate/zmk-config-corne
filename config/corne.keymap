@@ -13,11 +13,11 @@
 #define RAISE
 
 &lt {
-    quick-tap-ms = <200>;
+    quick-tap-ms = <300>;
 };
 
 &mt {
-    quick-tap-ms = <200>;
+    quick-tap-ms = <300>;
 };
 
      
