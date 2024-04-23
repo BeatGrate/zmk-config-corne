@@ -13,11 +13,11 @@
 #define RAISE
 
 &lt {
-    tapping-term-ms = <400>;
+    tapping-term-ms = <300>;
 };
 
 &mt {
-    tapping-term-ms = <800>;
+    tapping-term-ms = <300>;
 };
 
 
