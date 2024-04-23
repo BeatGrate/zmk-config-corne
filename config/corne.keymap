@@ -13,14 +13,14 @@
 #define RAISE
 
 &lt {
-    tapping-term-ms = <300>;
+    tapping-term-ms = <200>;
 };
 
 &mt {
-    tapping-term-ms = <300>;
+    tapping-term-ms = <200>;
 };
 
-
+     
 / {
        combos {
                 compatible = "zmk,combos";
