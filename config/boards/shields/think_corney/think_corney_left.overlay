@@ -6,10 +6,6 @@
 
 #include "think_corney.dtsi"
 
-/*
- * Matrix
- */
-
 &kscan0 {
 	col-gpios
 		= <&pro_micro 21 GPIO_ACTIVE_HIGH>
