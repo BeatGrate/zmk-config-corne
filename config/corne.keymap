@@ -10,7 +10,8 @@
 
 #define DEFAULT 0
 #define LOWER 1
-#define RAISE
+#define RAISE 2
+#define COLEMAK 3
 
 &lt {
     tapping-term-ms = <200>;
