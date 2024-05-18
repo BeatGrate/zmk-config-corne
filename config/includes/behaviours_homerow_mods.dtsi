@@ -29,7 +29,7 @@
             quick-tap-ms = <175>;                // repeat on tap-into-hold
             require-prior-idle-ms = <HM_PRIOR_IDLE>;
 
-            hold-trigger-key-positions = <KEYS_R KEYS_T>;
+//            hold-trigger-key-positions = <KEYS_R KEYS_T>;
             hold-trigger-on-release;
         };
 
