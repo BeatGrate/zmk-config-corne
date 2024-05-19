@@ -5,71 +5,92 @@
  */
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
 
 #define DEFAULT 0
 #define LOWER 1
-#define RAISE
+#define RAISE 2
+#define COLEMAK 3
 
 &lt {
     tapping-term-ms = <200>;
     quick-tap-ms = <200>;
 };
 
-     
 / {
-       combos {
-                compatible = "zmk,combos";
-                combo_esc {
-                    timeout-ms = <50>;
-                    key-positions = <19 20>;
-                    bindings = <&kp ESC>;
-                };
-       };
+    combos {
+        compatible = "zmk,combos";
 
-        keymap {
-                compatible = "zmk,keymap";
-
-                default_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB  |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BSLH |
-// |  CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  | SQT  |
-// | SHFT  |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | GRAVE|
-//   | GUI | L1 and ESC | LSHIFT and TAB |   |SPACE| L2 and BSPC | ENTER |
-                        bindings = <
-   &kp TAB    &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSLH
-   &kp LCTRL  &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-   &kp LSHFT  &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp GRAVE
-          &kp LGUI  &lt 1 ESC &mt LSHFT TAB   &kp SPACE &lt 2 BSPC &kp RET
-                        >;
-                };
-                lower_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  !  |  @  |  #  |  $   |  %   |   |  ^   |  &   |  *  |  (   |  )  | DEL   |
-// | TRANS| ALT | DEL |     |      |      |   | LEFT |  UP  |DOWN |RIGHT | HOME| END   |
-// | TRANS|     |     |     |      |      |   |      |  -   |  =  |  {   |   } | ALT+. |
-//                    |TRANS| TRANS|TRANS |   |TRANS | TRANS | TRANS |
-                        bindings = <
-   &trans  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT &kp CARET &kp AMPS &kp ASTRK &kp LPAR &kp RPAR &kp BSPC
-   &trans  &kp LALT &kp DEL &none &none &none &kp LEFT &kp UP &kp DOWN &kp RIGHT &kp HOME &kp END
-     &trans  &none &none &none &none &none &none &kp MINUS &kp EQUAL &kp LBRC &kp RBRC &kp LA(DOT)
-                            &trans     &trans   &trans      &trans  &trans   &trans
-                        >;
-                };
-
-                raise_layer {
-// -----------------------------------------------------------------------------------------
-// | TRANS|   1  |  2  |  3  |    4   |   5  |   |    6   |    7   |    8   |   9   |   0  |  TRANS |
-// | TRANS|MPREV |MNEXT|MVOLD|  MVOLU |MPALY |   |        |    -   |    =   |   [   |   ]  |  TRANS |
-// | TRANS| ALT  | DEL | COPY | PASTE |      |   | BTCLR  | BTPRV |  BTNXT  |       |      |  TRANS |
-//                     | CTRL | ENT | TAB |   | BSPC | SPC | LSFT |
-                        bindings = <
-   &trans &kp N1 &kp N2 &kp N3 &kp N4 &kp N5   &kp N6  &kp N7 &kp N8 &kp N9 &kp N0 &trans
-   &trans &kp C_PREV &kp C_NEXT &kp C_VOL_DN   &kp C_VOL_UP &kp C_PP &none &kp MINUS &kp EQUAL &kp LBKT &kp RBKT &trans
-   &trans &kp LALT &kp DEL &kp K_COPY  &kp K_PASTE  &none   &bt BT_CLR &bt BT_PRV  &bt BT_NXT &none &none &trans
-                             &mt LCTRL ESC  &trans  &none   &trans   &trans    &trans
-                        >;
-                };
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <19 20>;
+            bindings = <&kp ESC>;
         };
+
+        toggle-colemak {
+            bindings = <&tog 1>;
+            key-positions = <37 40>;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            // -----------------------------------------------------------------------------------------
+            // |  TAB  |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BSLH |
+            // |  CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  | SQT  |
+            // | SHFT  |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | GRAVE|
+            //   | GUI | L1 and ESC | LSHIFT and TAB |   |SPACE| L2 and BSPC | ENTER |
+
+            bindings = <
+&kp TAB    &kp Q  &kp W  &kp E     &kp R      &kp T            &kp Y      &kp U       &kp I      &kp O    &kp P     &kp BSLH
+&kp LCTRL  &kp A  &kp S  &kp D     &kp F      &kp G            &kp H      &kp J       &kp K      &kp L    &kp SEMI  &kp SQT
+&kp LSHFT  &kp Z  &kp X  &kp C     &kp V      &kp B            &kp N      &kp M       &kp COMMA  &kp DOT  &kp FSLH  &kp GRAVE
+                         &kp LGUI  &lt 2 ESC  &mt LSHFT TAB    &kp SPACE  &lt 3 BSPC  &kp RET
+            >;
+        };
+
+        colemak-dh {
+            bindings = <
+&trans  &kp Q  &kp W  &kp F   &kp P   &kp B     &kp J   &kp L   &kp U      &kp Y    &kp SEMI  &trans
+&trans  &kp A  &kp R  &kp S   &kp T   &kp G     &kp M   &kp N   &kp E      &kp I    &kp O     &trans
+&trans  &kp Z  &kp X  &kp C   &kp D   &kp V     &kp K   &kp H   &kp COMMA  &kp DOT  &kp FSLH  &trans
+                      &trans  &trans  &trans    &trans  &trans  &trans
+            >;
+        };
+
+        lower_layer {
+            // -----------------------------------------------------------------------------------------
+            // |  TAB |  !  |  @  |  #  |  $   |  %   |   |  ^   |  &   |  *  |  (   |  )  | DEL   |
+            // | TRANS| ALT | DEL |     |      |      |   | LEFT |  UP  |DOWN |RIGHT | HOME| END   |
+            // | TRANS|     |     |     |      |      |   |      |  -   |  =  |  {   |   } | ALT+. |
+            //                    |TRANS| TRANS|TRANS |   |TRANS | TRANS | TRANS |
+
+            bindings = <
+&trans  &kp EXCL  &kp AT   &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR   &kp RPAR  &kp BSPC
+&trans  &kp LALT  &kp DEL  &none     &none     &none        &kp LEFT   &kp UP     &kp DOWN   &kp RIGHT  &kp HOME  &kp END
+&trans  &none     &none    &none     &none     &none        &none      &kp MINUS  &kp EQUAL  &kp LBRC   &kp RBRC  &kp LA(DOT)
+                           &trans    &trans    &trans       &trans     &trans     &trans
+            >;
+        };
+
+        raise_layer {
+            // -----------------------------------------------------------------------------------------
+            // | TRANS|   1  |  2  |  3  |    4   |   5  |   |    6   |    7   |    8   |   9   |   0  |  TRANS |
+            // | TRANS|MPREV |MNEXT|MVOLD|  MVOLU |MPALY |   |        |    -   |    =   |   [   |   ]  |  TRANS |
+            // | TRANS| ALT  | DEL | COPY | PASTE |      |   | BTCLR  | BTPRV |  BTNXT  |       |      |  TRANS |
+            //                     | CTRL | ENT | TAB |   | BSPC | SPC | LSFT |
+
+            bindings = <
+&trans  &kp N1      &kp N2      &kp N3         &kp N4        &kp N5      &kp N6      &kp N7      &kp N8      &kp N9    &kp N0    &trans
+&trans  &kp C_PREV  &kp C_NEXT  &kp C_VOL_DN   &kp C_VOL_UP  &kp C_PP    &none       &kp MINUS   &kp EQUAL   &kp LBKT  &kp RBKT  &trans
+&trans  &kp LALT    &kp DEL     &kp K_COPY     &kp K_PASTE   &none       &bt BT_CLR  &bt BT_PRV  &bt BT_NXT  &none     &none     &trans
+                                &mt LCTRL ESC  &trans        &none       &trans      &trans      &trans
+            >;
+        };
+    };
+
+    conditional_layers { compatible = "zmk,conditional-layers"; };
 };
