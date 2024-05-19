@@ -27,11 +27,6 @@
             key-positions = <19 20>;
             bindings = <&kp ESC>;
         };
-
-        toggle-colemak {
-            bindings = <&tog 3>;
-            key-positions = <37 40>;
-        };
     };
 
     keymap {
@@ -89,6 +84,15 @@
 &trans  &kp Z  &kp X  &kp C   &kp D   &kp V     &kp K   &kp H   &kp COMMA  &kp DOT  &kp FSLH  &trans
                       &trans  &trans  &trans    &trans  &trans  &trans
             >;
+        };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        activeate-colemak {
+            if-layers = <1 2>;
+            then-layer = <3>;
         };
     };
 };
